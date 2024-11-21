@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Select Your Trip</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="country">Choose a country:</label>
+        <select class="form-control" id="country" name="country">
+            <option value="">All countries</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Spain">Spain</option>
+            <option value="France">France</option>
+            <option value="Italy">Italy</option>
+            <option value="USA">USA</option>
+            <option value="Egypt">Egypt</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="operator">Choose an operator:</label>
+        <select class="form-control" id="operator" name="operator">
+            <option value="">All operators</option>
+            <option value="TravelPro">TravelPro</option>
+            <option value="SunFun">SunFun</option>
+            <option value="HolidayCo">HolidayCo</option>
+            <option value="EuroTrips">EuroTrips</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="days">Minimum days:</label>
+        <input type="number" class="form-control" id="days" name="days" placeholder="Enter minimum number of days">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+
+<h2 class="mt-5">Available Trips</h2>
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Operator</th>
+            <th>Price ($)</th>
+            <th>Days</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for trip in trips %}
+        <tr>
+            <td>{{ trip['country'] }}</td>
+            <td>{{ trip['operator'] }}</td>
+            <td>{{ trip['price'] }}</td>
+            <td>{{ trip['days'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

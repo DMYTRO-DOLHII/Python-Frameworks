@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Find Trip{% endblock %}
+
+{% block content %}
+<h1>Find a Trip</h1>
+<form method="POST" action="/form">
+    <div class="mb-3">
+        <label for="country" class="form-label">Select Country</label>
+        {{ form.country(class="form-select") }}
+    </div>
+    <div class="mb-3">
+        <label for="operator" class="form-label">Select Operator</label>
+        {{ form.operator(class="form-check-input") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

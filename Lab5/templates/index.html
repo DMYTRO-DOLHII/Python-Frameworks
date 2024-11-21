@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Hangman Game{% endblock %}
+
+{% block content %}
+<div id="game-container">
+    <div class="hangman-image text-center">
+        <img src="{{ url_for('static', filename='img/hangman_0.png') }}" id="hangman-image" alt="Hangman">
+    </div>
+
+    <div class="current-word text-center">
+        <h2 id="current-word">{{ '_ ' * 6 }}</h2>
+    </div>
+
+    <div class="letters text-center">
+        <input type="text" id="guess-input" maxlength="1" autofocus>
+        <button id="submit-guess" class="btn btn-primary">Guess</button>
+    </div>
+
+    <div class="guessed-letters text-center">
+        <p>Guessed Letters: <span id="guesses"></span></p>
+        <p>Tries Left: <span id="tries-left">{{ MAX_TRIES }}</span></p>
+    </div>
+</div>
+{% endblock %}
