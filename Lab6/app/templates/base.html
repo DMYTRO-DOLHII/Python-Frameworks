@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Project</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'add_exam' %}">Add Exam</a></li>
+            <li><a href="{% url 'query1' %}">Query 1</a></li>
+            <li><a href="{% url 'query2' %}">Query 2</a></li>
+            <li><a href="{% url 'query3' %}">Query 3</a></li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

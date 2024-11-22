@@ -60,4 +60,4 @@ def game_over():
     return render_template('game_over.html', status=status, word=word)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000, debug=True)
+    app.run(host='0.0.0.0', port=10000)
